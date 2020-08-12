@@ -13,12 +13,12 @@
 # limitations under the License.
 
 # build the cassandra image.
-VERSION=v14
-PROJECT_ID?=google_samples
+VERSION=v15
+PROJECT_ID?=exlogy
 PROJECT=gcr.io/${PROJECT_ID}
-CASSANDRA_VERSION=3.11.2
+CASSANDRA_VERSION=3.11.7
 
-all: kubernetes-cassandra.jar build
+all: push
 
 build-go:
 	go build -a -installsuffix cgo \
@@ -37,10 +37,9 @@ container:
 container-dev:
 	docker build --pull --build-arg "CASSANDRA_VERSION=${CASSANDRA_VERSION}" --build-arg "DEV_CONTAINER=true" -t ${PROJECT}/cassandra:${VERSION}-dev image
 
-build: container container-dev
+build: container
 
 push: build
-	gcloud docker -- push ${PROJECT}/cassandra:${VERSION}
-	gcloud docker -- push ${PROJECT}/cassandra:${VERSION}-dev
+	docker push ${PROJECT}/cassandra:${VERSION}
 
 .PHONY: all build push

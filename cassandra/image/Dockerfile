@@ -23,11 +23,11 @@ LABEL \
     org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.docker.dockerfile="/Dockerfile" \
     org.label-schema.license="Apache License 2.0" \
-    org.label-schema.name="k8s-for-greeks/docker-cassandra-k8s" \
-    org.label-schema.url="https://github.com/k8s-for-greeks/" \
+    org.label-schema.name="exlogy-docker-cassandra" \
+    org.label-schema.url="https://github.com/exlogy/" \
     org.label-schema.vcs-ref=$VCS_REF \
     org.label-schema.vcs-type="Git" \
-    org.label-schema.vcs-url="https://github.com/k8s-for-greeks/docker-cassandra-k8s"
+    org.label-schema.vcs-url="https://github.com/exlogy/docker-cassandra"
 
 ENV CASSANDRA_HOME=/usr/local/apache-cassandra-${CASSANDRA_VERSION} \
     CASSANDRA_CONF=/etc/cassandra \

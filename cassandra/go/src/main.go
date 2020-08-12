@@ -7,13 +7,12 @@ import "C"
 import (
 	"context"
 	"encoding/json"
+	"github.com/ericchiang/k8s"
+	corev1 "github.com/ericchiang/k8s/apis/core/v1"
 	"log"
 	"strings"
 	"unicode"
 	"unsafe"
-
-	"github.com/ericchiang/k8s"
-	corev1 "github.com/ericchiang/k8s/apis/core/v1"
 )
 
 type endpoints struct {
